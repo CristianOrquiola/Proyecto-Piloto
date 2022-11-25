@@ -1,0 +1,174 @@
+events.csv
+
+id_odsp: unique identifier of game (odsp stands from oddsportal.com)identificador único del juego (odsp proviene de oddsportal.com)
+
+id_event: unique identifier of game (odsp stands from oddsportal.com)identificador único de evento (id_odsp + sort_order)
+
+sort_order:chronological sequence of events in a game secuencia cronológica de eventos en un juego
+
+time :  minute of the game minuto del juego
+
+text :  text commentary comentario de texto
+
+event_type: primary event. 11 unique events (1-Attempt(shot), 2-Corner, 3-Foul, 4-Yellow Card, 5-Second yellow card, 6-(Straight) red card, 7-Sub  evento primario. 11 eventos únicos (1-Intento(tiro), 2-Córner, 3-Falta, 4-Tarjeta amarilla, 5-Segunda tarjeta amarilla, 6-(Directa) roja
+
+event_type2 :secondary event. 4 unique events (12 - Key Pass, 13 - Failed through ball, 14-Sending off, 15-Own goal) evento secundario. 4 eventos únicos (12 - Pase clave, 13 - Balón fallado, 14-Expulsión, 15-Gol en propia puerta) 
+ 
+side : 1-Home, 2-Away 1-Local, 2-Visitante
+
+event_team: team that produced the event. In case of Own goals, event team is the team that beneficiated from the own goal  equipo que produjo el evento. En caso de goles en propia puerta, el equipo del evento es el equipo que se benefició del gol en propia puerta.
+
+opponent : team that the event happened against  equipo contra el que ocurrió el evento
+
+—-------------------------------------------------------------------------------------------------------------------------
+
+
+ginf.csv
+
+id_odsp: id del partido
+link_odsp: enlace a la pagina de oddsportal
+adv_stats:booleano, si el juego tiene datos de eventos detallados
+date: dia del evento
+league: club league
+season: año que se jugo
+country: pais donde se jugo el partido
+ht: equipo local
+at: equipo visitante
+ftgh: full time home goals
+
+
+dictionary.txt
+
+
+event_type
+0	Announcement - anuncio
+1	Attempt - intento
+2	Corner
+3	Foul - falta
+4	Yellow card - tarjeta amarilla
+5	Second yellow card - segunda tarjeta amarilla
+6	Red card - tarjeta roja
+7	Substitution - cambio de jugador
+8	Free kick won - tiro libre ganado
+9	Offside - posicion adelantada
+10	Hand ball - lateral
+11	Penalty conceded - penal
+
+
+event_type2
+12	Key Pass - pase clave
+13	Failed through ball - pase fallido
+14	Sending off - expulsion
+15	Own goal - gol encontra
+
+
+side
+1	Home - local
+2	Away - visitante
+
+
+shot_place : lugar_de_tiro
+
+
+1	Bit too high - tiro alto
+2	Blocked - bloqueado
+3	Bottom left corner - corner, inferior izquierda
+4	Bottom right corner - corner, inferior derecha
+5	Centre of the goal - circulo del medio
+6	High and wide 
+7	Hits the bar  - golpea la barra
+8	Misses to the left - fallas a la izq
+9	Misses to the right - fallas a la derecha
+10	Too high - demasiado alto
+11	Top centre of the goal - centro superior de la porteria
+12	Top left corner - corner superior izq
+13	Top right corner - corner superior derecha
+
+
+
+shot_outcome : tiro_resultado
+
+1	On target - al arco
+2	Off target - fuera del arco
+3	Blocked - bloqueado
+4	Hit the bar - golpea la barrera
+
+
+location :ubicación 
+
+1 attacking half - medio atacante
+2 defensive half -medio defensivo
+3 Center of the box - Centro de la caja
+4 Left wing - ala izquierda
+5 Right wing - ala derecha
+6 Difficult angle and long range -Ángulo difícil y largo alcance
+7 Difficult angle on the left - Ángulo difícil a la izquierda
+8 Difficult angle on the right - Ángulo difícil a la derecha
+9 Left side of the box - Lado izquierdo de la caja
+10 Left side of the six yard box - Lado izquierdo del área de seis yardas
+11 Right side of the box - Lado derecho de la caja
+12 Right side of the six yard box - Lado derecho del área de seis yardas
+13 Very close range - Rango muy cercano
+14 penalty spots - puntos de penalti
+15 Outside the box - Fuera de la caja
+16 Longrange - de largo alcance
+17 More than 35 yards - Más de 35 yardas - 32 metros
+18 More than 40 yards - Más de 40 yardas - 36.57 metros
+19 Not recorded - No registrado
+
+
+
+bodypart: parte del cuerpo
+
+
+1	right foot - pie derecho
+2	left foot - pie izquierdo
+3	head - cabeza
+
+
+assist_method :método_de_asistencia
+
+0	None - ninguna
+1	Pass - pase
+2	Cross - cruzado
+3	Headed pass - pase de cabeza
+4	Through ball - un pase que se patea hacia adelante entre los defensores de un equipo contrario
+
+
+situation : SITUACION 
+1	Open play - una jugada
+2	Set piece - balón parado
+3	Corner - corner
+4	Free kick - tiro libre
+
+
+
+
+
+Preguntas 2.0
+
+¿Cuál es el valor de un tiro? O cuál es la probabilidad de que un tiro sea un gol dada su ubicación, el tirador, la liga, el método de asistencia, el estado del juego, la cantidad de jugadores en el campo, el tiempo, conocidos como modelos de goles esperados (xG).
+¿Cuándo es más probable que los equipos anoten?
+¿Qué equipos son los mejores o los más descuidados a la hora de mantener el liderato?
+¿Qué equipos o jugadores hacen el mejor uso de las jugadas a balón parado?
+¿En qué ligas es más probable que el árbitro dé una tarjeta?
+¿Cómo se comparan los jugadores cuando lanzan con su pie débil versus un pie fuerte? ¿O qué jugadores son ambidiestros?
+Identificar diferentes estilos de jugadas (tiro desde larga distancia vs tiro desde el área, centro vs pase de balón, uso de cabezazos)
+¿Qué equipos tienen preferencia por atacar por un flanco en particular?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
