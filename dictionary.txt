@@ -100,16 +100,16 @@ side
 shot_place : lugar_de_tiro
 
 1	Bit too high - tiro alto
-2	Blocked - bloqueado
+2	Blocked - bloqueado - atajado
 3	Bottom left corner - corner, inferior izquierda
 4	Bottom right corner - corner, inferior derecha
 5	Centre of the goal - circulo del medio
 6	High and wide 
 7	Hits the bar  - golpea la barra
-8	Misses to the left - fallas a la izq
-9	Misses to the right - fallas a la derecha
+8	Misses to the left - fallas a la izq - al costado del arco
+9	Misses to the right - fallas a la derecha - al costado del arco
 10	Too high - demasiado alto
-11	Top centre of the goal - centro superior de la porteria
+11	Top centre of the goal - centro superior de la porteria - que entro en el centro
 12	Top left corner - corner superior izq
 13	Top right corner - corner superior derecha
 
