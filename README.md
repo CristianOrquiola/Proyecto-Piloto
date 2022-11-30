@@ -1,0 +1,152 @@
+# Proyecto-Piloto-CRISTIAN
+
+events.csv
+
+id_odsp: identificador único del juego (odsp proviene de oddsportal.com)identificador único del juego (odsp proviene de oddsportal.com)
+id_event: identificador único de juego (odsp proviene de oddsportal.com)identificador único de evento (id_odsp + sort_order)
+sort_order:secuencia cronológica de eventos en un juego secuencia cronológica de eventos en un juego
+time : minuto del juego minuto del juego
+text : comentario de texto comentario de texto
+event_type: evento principal. 11 eventos únicos (1-Intento(tiro), 2-Córner, 3-Falta, 4-Tarjeta amarilla, 5-Segunda tarjeta amarilla, 6-Tarjeta roja (directa), 7-Sub evento primario. 11 eventos únicos (1- Intento(tiro), 2-Córner, 3-Falta, 4-Tarjeta amarilla, 5-Segunda tarjeta amarilla, 6-(Directa) roja
+event_type2 :evento secundario. 4 eventos únicos (12 - Pase clave, 13 - Balón fallado, 14-Expulsión, 15-Gol en propia puerta) evento secundario. 4 eventos únicos (12 - Pase clave, 13 - Balón fallado, 14-Expulsión, 15-Gol en propia puerta)
+side : 1-Home, 2-Away 1-Local, 2-Visitante
+event_team: equipo que produjo el evento. En caso de goles en propia puerta, el equipo del evento es el equipo que se benefició del gol en propia puerta.
+opponent: equipo contra el que ocurrio el evento
+player: nombre del jugador involucrado en el evento principal (convertido a minúsculas y se eliminaron los caracteres especiales)
+player2: nombre del jugador involucrado en el segundo evento
+player_in: jugador que entró (solo aplica para sustituciones)
+player_out: jugador sustituido (solo aplica para sustituciones)
+shot_place: colocación de la toma (13 posibles ubicaciones de colocación, disponibles en el diccionario, solo se aplica a las tomas)
+shot_outcome:  4 resultados posibles (1-En el objetivo, 2-Fuera del objetivo, 3-Bloqueado, 4-Golpear el poste)
+is_goal: variable binaria si el tiro resultó en gol (incluidos los goles en propia puerta)
+location: ubicación en el terreno de juego donde ocurrió el evento (19 ubicaciones posibles, disponibles en el diccionario)
+bodypart:  (1- pie derecho, 2-pie izquierdo, 3-cabeza)
+assist_method: en caso de tiro asistido, 5 posibles métodos de asistencia (detalles en el diccionario)
+situation: 4 tipos: 1-Juego abierto, 2-Piezas fijas (excluyendo tiros libres directos), 3-Córner, 4-Tiros libres
+fast_break: binario
+
+—-------------------------------------------------------------------------------------------------------------------------
+
+
+ginf.csv
+
+id_odsp: id del partido
+link_odsp: enlace a la pagina de oddsportal
+adv_stats:booleano, si el juego tiene datos de eventos detallados
+date: dia del evento
+league: club league
+season: año que se jugo
+country: pais donde se jugo el partido
+ht: equipo local
+at: equipo visitante
+ftgh: full time home goals
+ftag: goles fuera de casa a tiempo completo
+odd_h: probabilidad más altas del mercado de victorias en casa
+odd_d: probabilidad de empate más altas del mercado
+odd_a: probabilidad más altas del mercado visitante
+odd_over: más alto sobre 2.5 probabilidad de mercado
+odd_under: probabilidad de mercado más altas por debajo de 2.5
+odd_bts: ambos equipos más altos para anotar probabilidad de mercado
+odd_bts_n: ambos equipos más altos para NO anotar probabilidad de mercado
+
+dictionary.txt
+
+event_type
+0	Announcement - anuncio
+1	Attempt - intento
+2	Corner
+3	Foul - falta
+4	Yellow card - tarjeta amarilla
+5	Second yellow card - segunda tarjeta amarilla
+6	Red card - tarjeta roja
+7	Substitution - cambio de jugador
+8	Free kick won - tiro libre ganado
+9	Offside - posicion adelantada
+10	Hand ball - lateral
+11	Penalty conceded - penal
+
+
+event_type2
+12	Key Pass - pase clave
+13	Failed through ball - pase fallido
+14	Sending off - expulsion
+15	Own goal - gol encontra
+
+
+side
+1	Home - local
+2	Away - visitante
+
+
+shot_place : lugar_de_tiro
+
+1	Bit too high - tiro alto
+2	Blocked - bloqueado - atajado
+3	Bottom left corner - corner, inferior izquierda
+4	Bottom right corner - corner, inferior derecha
+5	Centre of the goal - circulo del medio
+6	High and wide 
+7	Hits the bar  - golpea la barra
+8	Misses to the left - fallas a la izq - al costado del arco
+9	Misses to the right - fallas a la derecha - al costado del arco
+10	Too high - demasiado alto
+11	Top centre of the goal - centro superior de la porteria - que entro en el centro
+12	Top left corner - corner superior izq
+13	Top right corner - corner superior derecha
+
+
+
+shot_outcome : tiro_resultado
+
+1	On target - al arco
+2	Off target - fuera del arco
+3	Blocked - bloqueado
+4	Hit the bar - golpea la barrera
+
+
+location :ubicación 
+
+1 attacking half - medio atacante
+2 defensive half -medio defensivo
+3 Center of the box - Centro de la caja
+4 Left wing - ala izquierda
+5 Right wing - ala derecha
+6 Difficult angle and long range -Ángulo difícil y largo alcance
+7 Difficult angle on the left - Ángulo difícil a la izquierda
+8 Difficult angle on the right - Ángulo difícil a la derecha
+9 Left side of the box - Lado izquierdo de la caja
+10 Left side of the six yard box - Lado izquierdo del área de seis yardas
+11 Right side of the box - Lado derecho de la caja
+12 Right side of the six yard box - Lado derecho del área de seis yardas
+13 Very close range - Rango muy cercano
+14 penalty spots - puntos de penalti
+15 Outside the box - Fuera de la caja
+16 Longrange - de largo alcance
+17 More than 35 yards - Más de 35 yardas - 32 metros
+18 More than 40 yards - Más de 40 yardas - 36.57 metros
+19 Not recorded - No registrado
+
+
+
+bodypart: parte del cuerpo
+
+
+1	right foot - pie derecho
+2	left foot - pie izquierdo
+3	head - cabeza
+
+
+assist_method :método_de_asistencia
+
+0	None - ninguna
+1	Pass - pase
+2	Cross - cruzado
+3	Headed pass - pase de cabeza
+4	Through ball - un pase que se patea hacia adelante entre los defensores de un equipo contrario
+
+
+situation : SITUACION 
+1	Open play - juego abierto
+2	Set piece - balón parado
+3	Corner - corner
+4	Free kick - tiro libre
