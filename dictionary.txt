@@ -1,72 +1,51 @@
-events.csv
+---------events.csv-------------
 
-id_odsp: identificador único del juego (odsp proviene de oddsportal.com)identificador único del juego (odsp proviene de oddsportal.com)
-
-id_event: identificador único de juego (odsp proviene de oddsportal.com)identificador único de evento (id_odsp + sort_order)
-
-sort_order:secuencia cronológica de eventos en un juego secuencia cronológica de eventos en un juego
-
-time : minuto del juego minuto del juego
-
-text : comentario de texto comentario de texto
-
+_id_odsp: identificador único del juego (odsp proviene de oddsportal.com)identificador único del juego (odsp proviene de oddsportal.com)
+_id_event: identificador único de juego (odsp proviene de oddsportal.com)identificador único de evento (id_odsp + sort_order)
+_sort_order:secuencia cronológica de eventos en un juego secuencia cronológica de eventos en un juego
+_time : minuto del juego minuto del juego
+_text : comentario de texto comentario de texto
 event_type: evento principal. 11 eventos únicos (1-Intento(tiro), 2-Córner, 3-Falta, 4-Tarjeta amarilla, 5-Segunda tarjeta amarilla, 6-Tarjeta roja (directa), 7-Sub evento primario. 11 eventos únicos (1- Intento(tiro), 2-Córner, 3-Falta, 4-Tarjeta amarilla, 5-Segunda tarjeta amarilla, 6-(Directa) roja
+_event_type2 :evento secundario. 4 eventos únicos (12 - Pase clave, 13 - Balón fallado, 14-Expulsión, 15-Gol en propia puerta) evento secundario. 4 eventos únicos (12 - Pase clave, 13 - Balón fallado, 14-Expulsión, 15-Gol en propia puerta)
+_side : 1-Home, 2-Away 1-Local, 2-Visitante
+_event_team: equipo que produjo el evento. En caso de goles en propia puerta, el equipo del evento es el equipo que se benefició del gol en propia puerta.
+_opponent: equipo contra el que ocurrio el evento
+_player: nombre del jugador involucrado en el evento principal (convertido a minúsculas y se eliminaron los caracteres especiales)
+_player2: nombre del jugador involucrado en el segundo evento
+_player_in: jugador que entró (solo aplica para sustituciones)
+_player_out: jugador sustituido (solo aplica para sustituciones)
+_shot_place: colocación de la toma (13 posibles ubicaciones de colocación, disponibles en el diccionario, solo se aplica a las tomas)
+_shot_outcome:  4 resultados posibles (1-En el objetivo, 2-Fuera del objetivo, 3-Bloqueado, 4-Golpear el poste)
+_is_goal: variable binaria si el tiro resultó en gol (incluidos los goles en propia puerta)
+_location: ubicación en el terreno de juego donde ocurrió el evento (19 ubicaciones posibles, disponibles en el diccionario)
+_bodypart:  (1- pie derecho, 2-pie izquierdo, 3-cabeza)
+_assist_method: en caso de tiro asistido, 5 posibles métodos de asistencia (detalles en el diccionario)
+_situation: 4 tipos: 1-Juego abierto, 2-Piezas fijas (excluyendo tiros libres directos), 3-Córner, 4-Tiros libres
+_fast_break: binario
 
-event_type2 :evento secundario. 4 eventos únicos (12 - Pase clave, 13 - Balón fallado, 14-Expulsión, 15-Gol en propia puerta) evento secundario. 4 eventos únicos (12 - Pase clave, 13 - Balón fallado, 14-Expulsión, 15-Gol en propia puerta)
 
-side : 1-Home, 2-Away 1-Local, 2-Visitante
+-----------------ginf.csv-----------------
 
-event_team: equipo que produjo el evento. En caso de goles en propia puerta, el equipo del evento es el equipo que se benefició del gol en propia puerta.
-
-opponent: equipo contra el que ocurrio el evento
-
-player: nombre del jugador involucrado en el evento principal (convertido a minúsculas y se eliminaron los caracteres especiales)
-
-player2: nombre del jugador involucrado en el segundo evento
-
-player_in: jugador que entró (solo aplica para sustituciones)
-
-player_out: jugador sustituido (solo aplica para sustituciones)
-
-shot_place: colocación de la toma (13 posibles ubicaciones de colocación, disponibles en el diccionario, solo se aplica a las tomas)
-
-shot_outcome:  4 resultados posibles (1-En el objetivo, 2-Fuera del objetivo, 3-Bloqueado, 4-Golpear el poste)
-
-is_goal: variable binaria si el tiro resultó en gol (incluidos los goles en propia puerta)
-
-location: ubicación en el terreno de juego donde ocurrió el evento (19 ubicaciones posibles, disponibles en el diccionario)
-
-bodypart:  (1- pie derecho, 2-pie izquierdo, 3-cabeza)
-
-assist_method: en caso de tiro asistido, 5 posibles métodos de asistencia (detalles en el diccionario)
-
-situation: 4 tipos: 1-Juego abierto, 2-Piezas fijas (excluyendo tiros libres directos), 3-Córner, 4-Tiros libres
-
-fast_break: binario
+_id_odsp: id del partido
+## link_odsp: enlace a la pagina de oddsportal
+## adv_stats:booleano, si el juego tiene datos de eventos detallados
+_date: dia del evento
+_league: club league
+_season: año que se jugo
+_country: pais donde se jugo el partido
+## ht: equipo local
+##at: equipo visitante
+## ftgh: full time home goals
+## ftag: goles fuera de casa a tiempo completo
+## odd_h: probabilidad más altas del mercado de victorias en casa
+## odd_d: probabilidad de empate más altas del mercado
+## odd_a: probabilidad más altas del mercado visitante
+## odd_over: más alto sobre 2.5 probabilidad de mercado
+## odd_under: probabilidad de mercado más altas por debajo de 2.5
+## odd_bts: ambos equipos más altos para anotar probabilidad de mercado
+## odd_bts_n: ambos equipos más altos para NO anotar probabilidad de mercado
 
 —-------------------------------------------------------------------------------------------------------------------------
-
-
-ginf.csv
-
-id_odsp: id del partido
-link_odsp: enlace a la pagina de oddsportal
-adv_stats:booleano, si el juego tiene datos de eventos detallados
-date: dia del evento
-league: club league
-season: año que se jugo
-country: pais donde se jugo el partido
-ht: equipo local
-at: equipo visitante
-ftgh: full time home goals
-ftag: goles fuera de casa a tiempo completo
-odd_h: probabilidad más altas del mercado de victorias en casa
-odd_d: probabilidad de empate más altas del mercado
-odd_a: probabilidad más altas del mercado visitante
-odd_over: más alto sobre 2.5 probabilidad de mercado
-odd_under: probabilidad de mercado más altas por debajo de 2.5
-odd_bts: ambos equipos más altos para anotar probabilidad de mercado
-odd_bts_n: ambos equipos más altos para NO anotar probabilidad de mercado
 
 dictionary.txt
 
@@ -165,8 +144,8 @@ assist_method :método_de_asistencia
 
 
 situation : SITUACION 
-1	Open play - juego abierto
-2	Set piece - balón parado
+1	Open play - juego abierto - posicion de pelota
+2	Set piece - balón parado - tiro libre 
 3	Corner - corner
 4	Free kick - tiro libre
 
